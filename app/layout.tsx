@@ -1,3 +1,4 @@
+import SideBar from "@/components/Sidebar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto, Noto_Sans_KR } from "next/font/google";
@@ -10,7 +11,7 @@ const roboto = Roboto({
 
 const noto_sans_kr = Noto_Sans_KR({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "500", "700"],
   variable: "--font-noto_sans_kr",
 });
 
@@ -26,7 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${roboto.variable} ${noto_sans_kr.variable}`}>
-      <body>{children}</body>
+      <body>
+        <SideBar></SideBar>
+        {children}
+      </body>
     </html>
   );
 }
