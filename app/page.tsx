@@ -1,10 +1,9 @@
-import Image from "next/image";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
-    <>
-      <div className="font-roboto"> Hello!</div>
-      <span className="font-noto_sans_kr">안녕하세요!</span>
-    </>
+    <div className="bg-neutral-900 w-full h-full rounded-lg overflow-hidden overflow-y-auto">
+      <Header />
+    </div>
   );
 }
