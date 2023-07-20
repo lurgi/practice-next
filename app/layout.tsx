@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto, Noto_Sans_KR } from "next/font/google";
 import Home from "./page";
+import SupabaseProvider from "@/providers/SupabaseProvider";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -29,7 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} ${noto_sans_kr.variable}`}>
       <body className="font-noto_sans_kr">
-        <SideBar>{children}</SideBar>
+        <SupabaseProvider>
+          <SideBar>{children}</SideBar>
+        </SupabaseProvider>
       </body>
     </html>
   );

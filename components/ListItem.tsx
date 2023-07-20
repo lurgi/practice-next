@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { FaPlay } from "react-icons/fa";
 
 interface IListItemProps {
   image: string;
@@ -29,6 +30,23 @@ const ListItem = ({ image, name, href }: IListItemProps) => {
         <Image className="object-cover" alt="Image" src={image} fill></Image>
       </div>
       <p className="truncate py-5">{name}</p>
+      <div
+        className="absolute
+      right-5
+      bg-emerald-400
+      rounded-full
+      p-2
+      flex
+      justify-center
+      items-center
+      opacity-0
+      group-hover:opacity-100
+      hover:scale-110
+      transition
+      "
+      >
+        <FaPlay size={18}></FaPlay>
+      </div>
     </button>
   );
 };
